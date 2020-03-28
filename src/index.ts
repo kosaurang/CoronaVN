@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 import express from "express";
 import path from "path";
-import * as sessionAuth from "./middleware/sessionAuth";
 import * as routes from "./routes";
 
 // initialize configuration
@@ -23,8 +22,8 @@ app.set( "view engine", "ejs" );
 // Configure Express to serve static files in the public folder
 app.use( express.static( path.join( __dirname, "public" ) ) );
 
-// Configure session auth
-sessionAuth.register( app );
+// --- Configure session auth ---
+// sessionAuth.register( app );
 
 // Configure routes
 routes.register( app );
